@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Renda Digital | Comece Agora</title>
+    <title>Método Renda Digital | Oficial</title>
     
     <script>
     !function(f,b,e,v,n,t,s)
@@ -17,75 +17,63 @@
     fbq('init', '1264586518829595');
     fbq('track', 'PageView');
 
-    // FUNÇÃO DE ALTA PERFORMANCE: Dispara o pixel e abre o link sem lentidão
-    function irParaCheckout(e) {
-        const url = "https://pay.kiwify.com.br/MZVLYkH";
-        
-        // Dispara o evento de forma assíncrona (não trava o navegador)
+    function irParaCheckout() {
         if (typeof fbq === 'function') {
-            fbq('track', 'InitiateCheckout', {
-                value: 34.90,
-                currency: 'BRL'
-            });
+            fbq('track', 'InitiateCheckout', { value: 34.90, currency: 'BRL' });
         }
-        
-        // Redireciona imediatamente. O Meta captura o clique via "Outbound Link"
-        window.location.href = url;
+        window.location.href = "https://pay.kiwify.com.br/MZVLYkH";
     }
     </script>
-    <noscript>
-      <img height="1" width="1" style="display:none" 
-           src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/>
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/></noscript>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --primary: #10b981; 
-            --dark: #111827;
-            --light-gray: #f9fafb;
-            --text-main: #374151;
-            --accent: #ef4444;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Inter', sans-serif; background-color: white; color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-
-        /* HEADER / HERO */
-        .hero { background: linear-gradient(180deg, var(--dark) 0%, #1f2937 100%); color: white; padding: 60px 20px; text-align: center; }
-        .hero h1 { font-size: 1.7rem; line-height: 1.3; margin-bottom: 20px; font-weight: 800; }
-        .hero p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 30px; max-width: 500px; margin-inline: auto; }
-
-        /* BOTÃO OTIMIZADO */
+        :root { --primary: #10b981; --dark: #111827; --text: #374151; --light: #f9fafb; --accent: #ef4444; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #fff; color: var(--text); line-height: 1.5; -webkit-tap-highlight-color: transparent; }
+        .container { padding: 0 20px; max-width: 500px; margin: 0 auto; }
+        
+        /* HERO */
+        .hero { background: var(--dark); color: #fff; padding: 40px 20px; text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+        .hero h1 { font-size: 1.5rem; margin-bottom: 12px; line-height: 1.2; font-weight: 800; }
+        .hero p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px; }
+        
+        /* CTA BUTTON */
         .cta-button { 
-            display: block; background: var(--primary); color: white; text-decoration: none; 
-            padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3); text-transform: uppercase; text-align: center;
-            cursor: pointer; border: none; width: 100%;
+            display: block; background: var(--primary); color: #fff; text-decoration: none; 
+            padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1rem;
+            border: none; width: 100%; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.3);
+            text-transform: uppercase;
         }
-        .price-tag { display: block; font-size: 0.85rem; margin-top: 5px; opacity: 0.9; font-weight: 400; text-transform: none; }
-        .old-price { text-decoration: line-through; opacity: 0.7; }
+        .price { display: block; font-size: 0.75rem; font-weight: 400; margin-top: 3px; }
+        .old-price { text-decoration: line-through; opacity: 0.6; }
 
-        /* SEÇÕES */
-        .section { padding: 50px 20px; border-bottom: 1px solid #f0f0f0; }
-        .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 25px; color: var(--dark); text-align: center; }
+        /* SECTIONS */
+        .section { padding: 35px 0; border-bottom: 1px solid #f0f0f0; }
+        .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; color: var(--dark); text-align: center; }
+
+        /* LISTS */
+        .list-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 0.95rem; }
+        .list-item::before { content: '✓'; color: var(--primary); font-weight: bold; margin-right: 10px; }
+
+        /* PAIN BOX */
+        .pain-box { background: #fff1f2; padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .pain-text { font-weight: 600; color: #991b1b; margin-bottom: 8px; display: block; }
+
+        /* TESTIMONIALS */
+        .card { background: var(--light); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+        .user { display: flex; align-items: center; margin-top: 10px; }
+        .user img { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; background: #ccc; }
+        .user b { font-size: 0.85rem; }
+
+        /* PARA QUEM É / NÃO É */
+        .target-box { padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .is-for { background: #ecfdf5; border: 1px solid #bbf7d0; }
+        .not-for { background: #fef2f2; border: 1px solid #fecaca; }
+
+        /* GARANTIA */
+        .garantia { text-align: center; padding: 25px; border: 2px dashed #ddd; border-radius: 15px; margin-top: 20px; }
         
-        .check-list { list-style: none; }
-        .check-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 1rem; }
-        .check-item::before { content: '✓'; color: var(--primary); font-weight: bold; margin-right: 12px; background: #ecfdf5; padding: 2px 8px; border-radius: 50%; }
-
-        .pain-box { background: #fff1f2; padding: 20px; border-radius: 15px; border-left: 5px solid var(--accent); }
-        .pain-item { margin-bottom: 12px; font-weight: 600; color: #991b1b; }
-
-        .garantia-box { background: var(--dark); color: white; padding: 40px 20px; text-align: center; border-radius: 20px; margin: 20px; }
-        
-        details { background: var(--light-gray); border-radius: 10px; margin-bottom: 10px; padding: 15px; border: 1px solid #eee; }
-        summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-        summary::after { content: '+'; color: var(--primary); font-size: 1.2rem; }
-
-        footer { text-align: center; padding: 30px; font-size: 0.75rem; color: #9ca3af; }
+        footer { text-align: center; padding: 30px; font-size: 0.7rem; color: #999; }
     </style>
 </head>
 <body>
@@ -93,74 +81,89 @@
     <header class="hero">
         <div class="container">
             <h1>👉O primeiro passo para começar no mercado digital, mesmo sem experiência</h1>
-            <p>Método prático para aprender como funcionam as vendas online, pagamentos digitais e os primeiros passos no mercado digital</p>
+            <p>Método prático para aprender como funcionam as vendas online, pagamentos digitais e os primeiros passos no mercado</p>
             <button onclick="irParaCheckout()" class="cta-button">
-                👉 QUERO APRENDER DO ZERO
-                <span class="price-tag">De <span class="old-price">R$ 74,90</span> por apenas R$ 34,90</span>
+                Quero começar agora
+                <span class="price">De <span class="old-price">R$ 75,00</span> por apenas R$ 34,90</span>
             </button>
         </div>
     </header>
 
-    <section class="section">
-        <div class="check-list">
-            <div class="check-item">Método focado em iniciantes</div>
-            <div class="check-item">Não precisa aparecer</div>
-            <div class="check-item">Não precisa investir alto</div>
-            <div class="check-item">Funciona com pouco tempo por dia</div>
-            <div class="check-item">Passo a passo, sem termos complicados</div>
+    <section class="section container">
+        <div class="list-item">Método focado em iniciantes</div>
+        <div class="list-item">Não precisa aparecer</div>
+        <div class="list-item">Não precisa investir alto</div>
+        <div class="list-item">Funciona com pouco tempo por dia</div>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title">O que dizem nossos alunos:</h2>
+            <div class="card">
+                <p>"Não sabia nada de tecnologia. Fiz minha primeira venda na segunda semana usando só o Instagram."</p>
+                <div class="user">
+                    <img src="https://i.pravatar.cc/100?u=1" alt="Ana">
+                    <b>Ana Silva - Aluna</b>
+                </div>
+            </div>
+            <div class="card">
+                <p>"O módulo sobre receber por Pix é sensacional. Já recuperei o valor do curso no primeiro dia."</p>
+                <div class="user">
+                    <img src="https://i.pravatar.cc/100?u=2" alt="Marcos">
+                    <b>Marcos Oliveira - Aluno</b>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-title">👉 Você já passou por isso?</h2>
+    <section class="section container">
+        <h2 class="section-title">Você já passou por isso?</h2>
         <div class="pain-box">
-            <div class="pain-item">• Quer ganhar dinheiro online, mas não sabe por onde começar</div>
-            <div class="pain-item">• Vê muita promessa falsa na internet</div>
-            <div class="pain-item">• Tem medo de golpe e quer algo seguro</div>
-            <div class="pain-item">• Já tentou vender algo e não deu certo</div>
+            <span class="pain-text">✕ Não sabe por onde começar</span>
+            <span class="pain-text">✕ Vê muita promessa falsa</span>
+            <span class="pain-text">✕ Tem medo de cair em golpes</span>
+            <span class="pain-text">✕ Dificuldade em receber pagamentos</span>
         </div>
     </section>
 
-    <section class="section" style="background-color: var(--light-gray);">
-        <h2 class="section-title">👉 O que você vai aprender</h2>
-        <div class="check-list">
-            <div class="check-item">Como ganhar dinheiro de forma legal</div>
-            <div class="check-item">Como vender produtos digitais e físicos</div>
-            <div class="check-item">Como receber pagamentos via Pix e Cartão</div>
-            <div class="check-item">Como usar redes sociais para vender</div>
-            <div class="check-item">Como evitar erros de iniciantes</div>
+    <section class="section container">
+        <h2 class="section-title">O que você vai aprender</h2>
+        <div class="list-item">Como vender produtos digitais e físicos</div>
+        <div class="list-item">Como receber via Pix e Cartão</div>
+        <div class="list-item">Como usar redes sociais para vender</div>
+        <div class="list-item">Como criar ofertas que convertem</div>
+    </section>
+
+    <section class="section container">
+        <h2 class="section-title">Este curso é para você?</h2>
+        <div class="target-box is-for">
+            <b>✅ É PARA VOCÊ SE:</b>
+            <p style="font-size: 0.9rem;">Quer começar do zero, busca algo honesto e quer praticidade.</p>
+        </div>
+        <div class="target-box not-for">
+            <b>❌ NÃO É PARA VOCÊ SE:</b>
+            <p style="font-size: 0.9rem;">Busca dinheiro fácil sem esforço ou não quer aplicar as aulas.</p>
         </div>
     </section>
 
-    <section class="garantia-box">
-        <h2 style="margin-bottom:15px;">Risco Zero</h2>
-        <p>7 dias de garantia. Se não gostar, a <b>Kiwify</b> devolve seu dinheiro na hora.</p>
+    <section class="container">
+        <div class="garantia">
+            <h2 style="font-size: 1.1rem; margin-bottom: 10px;">🛡️ Risco Zero</h2>
+            <p style="font-size: 0.9rem;">7 dias de garantia incondicional. Se não gostar, devolvemos seu dinheiro na hora via Kiwify.</p>
+        </div>
     </section>
 
-    <section class="section" style="text-align: center;">
+    <section class="section container" style="text-align: center;">
         <h2 class="section-title">Comece hoje mesmo</h2>
-        <p style="margin-bottom: 25px;">O acesso é imediato e você recebe tudo no e-mail.</p>
         <button onclick="irParaCheckout()" class="cta-button">
-            👉 Quero aprender agora
-            <span class="price-tag">Pagamento único de R$ 34,90</span>
+            Quero aprender agora
+            <span class="price">Acesso imediato por R$ 34,90</span>
         </button>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Dúvidas Frequentes</h2>
-        <details>
-            <summary>Preciso de computador?</summary>
-            <p style="padding-top:10px;">Não, você consegue fazer tudo pelo celular.</p>
-        </details>
-        <details>
-            <summary>Como recebo o curso?</summary>
-            <p style="padding-top:10px;">O acesso chega no seu e-mail logo após a confirmação do pagamento.</p>
-        </details>
     </section>
 
     <footer>
         &copy; 2026 Método Renda Digital. <br>
-        Compra 100% Segura e Garantida.
+        Todos os direitos reservados.
     </footer>
 
 </body>
