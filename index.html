@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Método BR.digital</title>
+    <title>Vendas no Digital | Pietro Mplace</title>
     
     <script>
         !function(f,b,e,v,n,t,s)
@@ -17,67 +17,46 @@
         fbq('init', '1264586518829595');
         fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/>
-    </noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap">
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/></noscript>
 
     <style>
-        :root {
-            --primary: #ccff00; 
-            --bg: #05080a;
-            --card: #0d1218;
-            --text: #ffffff;
-            --accent: #ff3e3e;
-        }
-
-        /* Reset e Segurança Visual */
+        :root { --primary: #ccff00; --bg: #05080a; --card: #0d1218; --text: #ffffff; --accent: #ff3e3e; }
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.4; overflow-x: hidden; }
-
         .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; }
-
-        .header-bar { background: var(--accent); text-align: center; padding: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Headline e Subheadline */
+        .header-bar { background: var(--accent); text-align: center; padding: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+        
         .hero { padding: 40px 0 20px; text-align: center; }
-        .hero h1 { font-family: 'Archivo Black', sans-serif; font-size: 1.7rem; line-height: 1.2; text-transform: uppercase; margin-bottom: 15px; }
-        .hero .highlight { color: var(--primary); }
+        .hero h1 { font-size: 1.7rem; text-transform: uppercase; margin-bottom: 15px; font-weight: 900; line-height: 1.2; }
+        .highlight { color: var(--primary); }
         .hero p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; color: #cbd5e1; }
 
-        /* Checklist */
-        .checklist-section { background: var(--card); padding: 30px 20px; border-radius: 20px; margin: 20px 0; border: 1px solid #1e293b; }
-        .check-item { display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 0.95rem; }
-        .check-icon { color: var(--primary); margin-right: 12px; font-weight: bold; font-size: 1.2rem; }
+        /* Checklist de Dores/Soluções (Mantido) */
+        .checklist-section { background: var(--card); padding: 25px 20px; border-radius: 20px; margin: 10px 0; border: 1px solid #1e293b; }
+        .check-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
+        .check-icon { color: var(--primary); margin-right: 12px; font-weight: bold; }
 
-        /* Botão CTA */
-        .cta-btn { 
-            display: block; background: var(--primary); color: #000; text-decoration: none; 
-            padding: 22px; border-radius: 12px; font-weight: 900; font-size: 1.1rem; 
-            text-align: center; text-transform: uppercase; transition: transform 0.2s;
-            box-shadow: 0 8px 20px rgba(204, 255, 0, 0.2);
-        }
+        /* 📦 NOVA SEÇÃO: O QUE VOCÊ VAI RECEBER (Foco em Conversão) */
+        .delivery-box { background: var(--card); padding: 30px 20px; border-radius: 20px; margin: 20px 0; border: 2px solid #1e293b; position: relative; }
+        .delivery-box h2 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 20px; color: var(--primary); text-align: center; }
+        .box-item { display: flex; align-items: center; margin-bottom: 15px; font-size: 0.95rem; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; }
+        .box-icon { margin-right: 12px; font-size: 1.3rem; }
+
+        .cta-btn { display: block; background: var(--primary); color: #000; text-decoration: none; padding: 22px; border-radius: 12px; font-weight: 900; font-size: 1.1rem; text-align: center; text-transform: uppercase; box-shadow: 0 8px 20px rgba(204, 255, 0, 0.2); transition: 0.2s; }
         .cta-btn:active { transform: scale(0.96); }
 
-        /* Depoimentos */
-        .testimonials { padding: 30px 0; text-align: center; }
-        .testimonials h2 { font-family: 'Archivo Black', sans-serif; font-size: 1.3rem; margin-bottom: 25px; text-transform: uppercase; }
-        .testimonial-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 15px; border: 1px solid #1e293b; display: block; }
+        .testimonial-img { width: 100%; border-radius: 12px; margin-bottom: 15px; border: 1px solid #1e293b; display: block; }
 
-        /* Oferta Final */
         .offer-card { background: var(--card); padding: 40px 20px; border-radius: 24px; text-align: center; border: 2px solid var(--primary); margin: 40px 0; }
-        .old-price { text-decoration: line-through; color: #64748b; font-weight: 600; font-size: 0.9rem; }
         .new-price { display: block; font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 5px 0; }
         
-        .verify-tag { display: inline-flex; align-items: center; background: rgba(204, 255, 0, 0.1); color: var(--primary); padding: 8px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-top: 20px; border: 1px solid rgba(204, 255, 0, 0.2); }
-
-        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.4; border-top: 1px solid #111; }
+        .verify-tag { display: inline-flex; align-items: center; background: rgba(204, 255, 0, 0.1); color: var(--primary); padding: 8px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-top: 15px; border: 1px solid rgba(204, 255, 0, 0.2); }
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.4; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
-    <div class="header-bar">⚠️ ATENÇÃO: ÚLTIMAS VAGAS NO VALOR PROMOCIONAL</div>
+    <div class="header-bar">⚠️ ÚLTIMAS VAGAS NO VALOR PROMOCIONAL</div>
 
     <main class="container">
         
@@ -90,32 +69,35 @@
             <div class="check-item"><span class="check-icon">✓</span> <span><b>Entenda o Ecossistema:</b> Saiba como o dinheiro circula no digital.</span></div>
             <div class="check-item"><span class="check-icon">✓</span> <span><b>Domine os Pagamentos:</b> Configure as ferramentas que te pagam.</span></div>
             <div class="check-item"><span class="check-icon">✓</span> <span><b>Primeiros Passos Reais:</b> O que fazer hoje para começar.</span></div>
-            
-            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');">
-                Quero Começar Agora
-            </a>
         </section>
 
-        <section class="testimonials">
-            <h2>Resultados de Alunos</h2>
-            <img src="imagem1.png.png" class="testimonial-img" loading="lazy">
-            <img src="imagem2.png.png" class="testimonial-img" loading="lazy">
-            <img src="imagem3.png.jpg" class="testimonial-img" loading="lazy">
+        <section class="delivery-box">
+            <h2>📦 O que está incluso no seu acesso:</h2>
+            <div class="box-item"><span class="box-icon">🚀</span> <span><b>Método Passo a Passo:</b> Aprenda a lógica por trás das vendas.</span></div>
+            <div class="box-item"><span class="box-icon">📋</span> <span><b>Checklist Prático:</b> Guia de execução para não se perder.</span></div>
+            <div class="box-item"><span class="box-icon">♾️</span> <span><b>Acesso Vitalício:</b> Assista no seu tempo, sem expiração.</span></div>
+            <div class="box-item"><span class="box-icon">🔄</span> <span><b>Atualizações:</b> Conteúdo sempre renovado sem custo extra.</span></div>
+            <div class="box-item"><span class="box-icon">⚡</span> <span><b>Acesso Imediato:</b> Receba tudo no e-mail agora mesmo.</span></div>
+            
+            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');" style="margin-top: 10px;">Quero Começar Agora</a>
+        </section>
+
+        <section style="padding: 20px 0; text-align: center;">
+            <h2 style="margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; font-weight: 900;">Resultados de Alunos</h2>
+            <img src="imagem1.png" class="testimonial-img" loading="lazy">
+            <img src="imagem2.png" class="testimonial-img" loading="lazy">
+            <img src="imagem3.png" class="testimonial-img" loading="lazy">
         </section>
 
         <section class="offer-card">
-            <p style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem;">OFERTA EXCLUSIVA</p>
-            <p class="old-price">De R$ 197,90</p>
-            <p style="font-size: 0.9rem;">Por apenas</p>
+            <p style="font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;">OFERTA DE LANÇAMENTO</p>
+            <p style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem;">De R$ 197,90</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;">Por apenas</p>
             <span class="new-price">R$ 34,90</span>
             
-            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');">
-                GARANTIR MINHA VAGA
-            </a>
-
-            <div class="verify-tag">
-                🛡️ CONTEÚDO 100% VERIFICADO E SEGURO
-            </div>
+            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');">GARANTIR MINHA VAGA</a>
+            
+            <div class="verify-tag">🛡️ SITE OFICIAL E 100% SEGURO</div>
         </section>
 
     </main>
@@ -125,13 +107,9 @@
     </footer>
 
     <script>
-        // Bloqueia F12 e atalhos de inspeção
         document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-                return false;
-            }
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
         };
     </script>
-
 </body>
 </html>
