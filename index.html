@@ -2,170 +2,136 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Renda Digital | Oficial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Método BR.digital</title>
     
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1264586518829595');
-    fbq('track', 'PageView');
-
-    function irParaCheckout() {
-        if (typeof fbq === 'function') {
-            fbq('track', 'InitiateCheckout', { value: 34.90, currency: 'BRL' });
-        }
-        window.location.href = "https://pay.kiwify.com.br/MZVLYkH";
-    }
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1264586518829595');
+        fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1264586518829595&ev=PageView&noscript=1"/>
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap">
 
     <style>
-        :root { --primary: #10b981; --dark: #111827; --text: #374151; --light: #f9fafb; --accent: #ef4444; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { background: #fff; color: var(--text); line-height: 1.5; -webkit-tap-highlight-color: transparent; }
-        .container { padding: 0 20px; max-width: 500px; margin: 0 auto; }
-        
-        /* HERO */
-        .hero { background: var(--dark); color: #fff; padding: 40px 20px; text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-        .hero h1 { font-size: 1.5rem; margin-bottom: 12px; line-height: 1.2; font-weight: 800; }
-        .hero p { font-size: 0.95rem; opacity: 0.9; margin-bottom: 20px; }
-        
-        /* CTA BUTTON */
-        .cta-button { 
-            display: block; background: var(--primary); color: #fff; text-decoration: none; 
-            padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1rem;
-            border: none; width: 100%; cursor: pointer; box-shadow: 0 4px 12px rgba(16,185,129,0.3);
-            text-transform: uppercase;
+        :root {
+            --primary: #ccff00; 
+            --bg: #05080a;
+            --card: #0d1218;
+            --text: #ffffff;
+            --accent: #ff3e3e;
         }
-        .price { display: block; font-size: 0.75rem; font-weight: 400; margin-top: 3px; }
-        .old-price { text-decoration: line-through; opacity: 0.6; }
 
-        /* SECTIONS */
-        .section { padding: 35px 0; border-bottom: 1px solid #f0f0f0; }
-        .section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; color: var(--dark); text-align: center; }
+        /* Reset e Segurança Visual */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.4; overflow-x: hidden; }
 
-        /* LISTS */
-        .list-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 0.95rem; }
-        .list-item::before { content: '✓'; color: var(--primary); font-weight: bold; margin-right: 10px; }
+        .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; }
 
-        /* PAIN BOX */
-        .pain-box { background: #fff1f2; padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent); }
-        .pain-text { font-weight: 600; color: #991b1b; margin-bottom: 8px; display: block; }
+        .header-bar { background: var(--accent); text-align: center; padding: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* TESTIMONIALS */
-        .card { background: var(--light); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
-        .user { display: flex; align-items: center; margin-top: 10px; }
-        .user img { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; background: #ccc; }
-        .user b { font-size: 0.85rem; }
+        /* Headline e Subheadline */
+        .hero { padding: 40px 0 20px; text-align: center; }
+        .hero h1 { font-family: 'Archivo Black', sans-serif; font-size: 1.7rem; line-height: 1.2; text-transform: uppercase; margin-bottom: 15px; }
+        .hero .highlight { color: var(--primary); }
+        .hero p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; color: #cbd5e1; }
 
-        /* PARA QUEM É / NÃO É */
-        .target-box { padding: 15px; border-radius: 10px; margin-bottom: 10px; }
-        .is-for { background: #ecfdf5; border: 1px solid #bbf7d0; }
-        .not-for { background: #fef2f2; border: 1px solid #fecaca; }
+        /* Checklist */
+        .checklist-section { background: var(--card); padding: 30px 20px; border-radius: 20px; margin: 20px 0; border: 1px solid #1e293b; }
+        .check-item { display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 0.95rem; }
+        .check-icon { color: var(--primary); margin-right: 12px; font-weight: bold; font-size: 1.2rem; }
 
-        /* GARANTIA */
-        .garantia { text-align: center; padding: 25px; border: 2px dashed #ddd; border-radius: 15px; margin-top: 20px; }
+        /* Botão CTA */
+        .cta-btn { 
+            display: block; background: var(--primary); color: #000; text-decoration: none; 
+            padding: 22px; border-radius: 12px; font-weight: 900; font-size: 1.1rem; 
+            text-align: center; text-transform: uppercase; transition: transform 0.2s;
+            box-shadow: 0 8px 20px rgba(204, 255, 0, 0.2);
+        }
+        .cta-btn:active { transform: scale(0.96); }
+
+        /* Depoimentos */
+        .testimonials { padding: 30px 0; text-align: center; }
+        .testimonials h2 { font-family: 'Archivo Black', sans-serif; font-size: 1.3rem; margin-bottom: 25px; text-transform: uppercase; }
+        .testimonial-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 15px; border: 1px solid #1e293b; display: block; }
+
+        /* Oferta Final */
+        .offer-card { background: var(--card); padding: 40px 20px; border-radius: 24px; text-align: center; border: 2px solid var(--primary); margin: 40px 0; }
+        .old-price { text-decoration: line-through; color: #64748b; font-weight: 600; font-size: 0.9rem; }
+        .new-price { display: block; font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 5px 0; }
         
-        footer { text-align: center; padding: 30px; font-size: 0.7rem; color: #999; }
+        .verify-tag { display: inline-flex; align-items: center; background: rgba(204, 255, 0, 0.1); color: var(--primary); padding: 8px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-top: 20px; border: 1px solid rgba(204, 255, 0, 0.2); }
+
+        footer { padding: 40px 0; text-align: center; font-size: 0.7rem; opacity: 0.4; border-top: 1px solid #111; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
-    <header class="hero">
-        <div class="container">
-            <h1>👉O primeiro passo para começar no mercado digital, mesmo sem experiência</h1>
-            <p>Método prático para aprender como funcionam as vendas online, pagamentos digitais e os primeiros passos no mercado</p>
+    <div class="header-bar">⚠️ ATENÇÃO: ÚLTIMAS VAGAS NO VALOR PROMOCIONAL</div>
 
-        </div>
-    </header>
+    <main class="container">
+        
+        <section class="hero">
+            <h1>👉 O primeiro passo para começar no <span class="highlight">mercado digital</span>, mesmo sem experiência</h1>
+            <p>Método prático para aprender como funcionam as vendas online, pagamentos digitais e os primeiros passos no mercado.</p>
+        </section>
 
-    <section class="section container">
-        <div class="list-item">Método focado em iniciantes</div>
-        <div class="list-item">Criar uma oferta simples</div>
-        <div class="list-item">Receber pagamentos via Pix</div>
-        <div class="list-item">Fazer sua primeira venda online</div>
-    </section>
-            <button onclick="irParaCheckout()" class="cta-button">
-                Quero começar agora
-                <span class="price">De <span class="old-price">R$ 75,00</span> por apenas R$ 34,90</span>
-            </button>
-    <section class="section" style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">O que dizem nossos alunos:</h2>
-            <div class="card">
-                <p>"Li todos os métodos e hoje aplico aquele de utilizar IA, está me dando grande retorno"</p>
-                <div class="user">
-                    <img src="https://i.pravatar.cc/100?u=1" alt="Ana">
-                    <b>Ana Silva - Aluna</b>
-                </div>
+        <section class="checklist-section">
+            <div class="check-item"><span class="check-icon">✓</span> <span><b>Entenda o Ecossistema:</b> Saiba como o dinheiro circula no digital.</span></div>
+            <div class="check-item"><span class="check-icon">✓</span> <span><b>Domine os Pagamentos:</b> Configure as ferramentas que te pagam.</span></div>
+            <div class="check-item"><span class="check-icon">✓</span> <span><b>Primeiros Passos Reais:</b> O que fazer hoje para começar.</span></div>
+            
+            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');">
+                Quero Começar Agora
+            </a>
+        </section>
+
+        <section class="testimonials">
+            <h2>Resultados de Alunos</h2>
+            <img src="imagem1.png.png" class="testimonial-img" loading="lazy">
+            <img src="imagem2.png.png" class="testimonial-img" loading="lazy">
+            <img src="imagem3.png.jpg" class="testimonial-img" loading="lazy">
+        </section>
+
+        <section class="offer-card">
+            <p style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem;">OFERTA EXCLUSIVA</p>
+            <p class="old-price">De R$ 197,90</p>
+            <p style="font-size: 0.9rem;">Por apenas</p>
+            <span class="new-price">R$ 34,90</span>
+            
+            <a href="https://pay.kiwify.com.br/MZVLYkH" class="cta-btn" onclick="fbq('track', 'InitiateCheckout');">
+                GARANTIR MINHA VAGA
+            </a>
+
+            <div class="verify-tag">
+                🛡️ CONTEÚDO 100% VERIFICADO E SEGURO
             </div>
-            <div class="card">
-                <p>"Eu ainda tinha pensado que joguei dinheiro fora! Melhor decisão que tomei"</p>
-                <div class="user">
-                    <img src="https://i.pravatar.cc/100?u=2" alt="Marcos">
-                    <b>Victor S. - Aluno</b>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section container">
-        <h2 class="section-title">Você já passou por isso?</h2>
-        <div class="pain-box">
-            <span class="pain-text">✕ Não sabe por onde começar</span>
-            <span class="pain-text">✕ Vê muita promessa falsa</span>
-            <span class="pain-text">✕ Tem medo de cair em golpes</span>
-            <span class="pain-text">✕ Dificuldade em receber pagamentos</span>
-        </div>
-    </section>
-
-    <section class="section container">
-        <h2 class="section-title">O que você vai aprender</h2>
-        <div class="list-item">Como vender produtos digitais e físicos</div>
-        <div class="list-item">Como receber via Pix e Cartão</div>
-        <div class="list-item">Como usar redes sociais para vender</div>
-        <div class="list-item">Como criar ofertas que convertem</div>
-    </section>
-
-    <section class="section container">
-        <h2 class="section-title">Este curso é para você?</h2>
-        <div class="target-box is-for">
-            <b>✅ É PARA VOCÊ SE:</b>
-            <p style="font-size: 0.9rem;">Quer começar do zero, busca algo honesto e quer praticidade.</p>
-        </div>
-        <div class="target-box not-for">
-            <b>❌ NÃO É PARA VOCÊ SE:</b>
-            <p style="font-size: 0.9rem;">Busca dinheiro fácil sem esforço ou não quer aplicar as aulas.</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="garantia">
-            <h2 style="font-size: 1.1rem; margin-bottom: 10px;">🛡️ Risco Zero</h2>
-            <p style="font-size: 0.9rem;">7 dias de garantia incondicional. Se não gostar, devolvemos seu dinheiro na hora via Kiwify.</p>
-        </div>
-    </section>
-
-    <section class="section container" style="text-align: center;">
-        <h2 class="section-title">Comece hoje mesmo</h2>
-        <button onclick="irParaCheckout()" class="cta-button">
-            Quero aprender agora
-            <span class="price">Acesso imediato por R$ 34,90</span>
-        </button>
-    </section>
+    </main>
 
     <footer>
-        &copy; 2026 Método Renda Digital. <br>
-        Todos os direitos reservados.
+        <p>&copy; 2026 Pietro Mplace | Vendas no Digital</p>
     </footer>
+
+    <script>
+        // Bloqueia F12 e atalhos de inspeção
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
+                return false;
+            }
+        };
+    </script>
 
 </body>
 </html>
-
